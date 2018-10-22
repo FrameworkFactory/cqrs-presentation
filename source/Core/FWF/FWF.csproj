@@ -9,9 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Data\**" />
-    <EmbeddedResource Remove="Net\**" />
     <None Remove="Data\**" />
-    <None Remove="Net\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppVersion.cs" />
@@ -97,6 +95,9 @@
     <Compile Include="Logging\LogPayload.cs" />
     <Compile Include="Logging\NoOpLog.cs" />
     <Compile Include="Logging\NoOpLogFactory.cs" />
+    <Compile Include="Net\ILocalTcpPortManager.cs" />
+    <Compile Include="Net\LocalTcpPortManager.cs" />
+    <Compile Include="Net\PortReservation.cs" />
     <Compile Include="OperationMask.cs" />
     <Compile Include="PublicType.cs" />
     <Compile Include="RngRandom.cs" />

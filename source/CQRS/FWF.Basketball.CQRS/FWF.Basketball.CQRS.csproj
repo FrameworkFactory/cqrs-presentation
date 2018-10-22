@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <ItemGroup>
+    <Compile Include="Bootstrap\BasketballCQRSModule.cs" />
+    <Compile Include="Commands\AddPlayerCommand.cs" />
+    <Compile Include="Commands\AddPlayersCommand.cs" />
+    <Compile Include="Commands\DeletePlayerCommand.cs" />
+    <Compile Include="Commands\UpdatePlayerCommand.cs" />
+    <Compile Include="CQRSGamePlayerListener.cs" />
+    <Compile Include="EventHandlers\ScoreChangeEventHandler.cs" />
+    <Compile Include="EventHandlers\ScoreChangeEventHandler2.cs" />
+    <Compile Include="Events\GameClockChangeEvent.cs" />
+    <Compile Include="Events\GameDetailChangeEvent.cs" />
+    <Compile Include="Events\PlayerDetailChangeEvent.cs" />
+    <Compile Include="Events\ScoreChangeEvent.cs" />
+    <Compile Include="GameDetail.cs" />
+    <Compile Include="PlayerDetail.cs" />
+    <Compile Include="Queries\GetPlayerQuery.cs" />
+    <Compile Include="Queries\GetPlayersQuery.cs" />
+    <Compile Include="Sagas\GetGameDetailSagaQuery.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <Description>FWF Basketball CQRS Library</Description>
+    <AssemblyName>FWF.Basketball.CQRS</AssemblyName>
+    <RootNamespace>FWF.Basketball.CQRS</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{D7D57DF0-85D8-491C-84EC-260ECB6230EB}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FWF\FWF.csproj">
+      <Project>{7046a80c-4ea1-463a-8d44-c275a4c10774}</Project>
+      <Name>FWF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Games\FWF.Basketball.Logic\FWF.Basketball.Logic.csproj">
+      <Project>{e918251c-8e05-4d17-8fb1-ee5317108492}</Project>
+      <Name>FWF.Basketball.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Games\FWF.Basketball\FWF.Basketball.csproj">
+      <Project>{5cbc5849-cfd3-44e3-808c-b112a805f4ed}</Project>
+      <Name>FWF.Basketball</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommandHandlers\" />
+    <Folder Include="QueryHandlers\" />
+    <Folder Include="SagaHandlers\" />
+  </ItemGroup>
+</Project>

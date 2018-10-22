@@ -2,6 +2,7 @@
 using FWF.Logging;
 using FWF.CQRS;
 using FWF.Data.Local;
+using FWF.Net;
 using FWF.Threading;
 using FWF.Configuration;
 using FWF.Json;
@@ -43,10 +44,15 @@ namespace FWF.Bootstrap
                 .AsSelf()
                 .As<IEventPublisher>()
                 .SingleInstance();
-            
+
             builder.RegisterType<LocalDataContext>()
                 .AsSelf()
                 .As<ILocalDataContext>()
+                .SingleInstance();
+
+            builder.RegisterType<LocalTcpPortManager>()
+                .AsSelf()
+                .As<ILocalTcpPortManager>()
                 .SingleInstance();
 
             builder.RegisterType<InMemoryAppSettings>()
