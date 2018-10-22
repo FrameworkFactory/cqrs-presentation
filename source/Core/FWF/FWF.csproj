@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <PropertyGroup>
+    <Description>FWF Global Library</Description>
+    <AssemblyName>FWF</AssemblyName>
+    <RootNamespace>FWF</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{7046A80C-4EA1-463A-8D44-C275A4C10774}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap\RootModule.cs" />
+    <Compile Include="ComponentModel\IValidate.cs" />
+    <Compile Include="ComponentModel\ValidationError.cs" />
+    <Compile Include="ComponentModel\ValidationException.cs" />
+    <Compile Include="ComponentModel\ValidationMessages.cs" />
+    <Compile Include="ComponentModel\ValidationResponse.cs" />
+    <Compile Include="CQRS\CommandResponse.cs" />
+    <Compile Include="CQRS\EventBase.cs" />
+    <Compile Include="CQRS\ICommand.cs" />
+    <Compile Include="CQRS\ICommandHandler.cs" />
+    <Compile Include="CQRS\ICommandResponse.cs" />
+    <Compile Include="CQRS\ICqrsLogicHandler.cs" />
+    <Compile Include="CQRS\IEvent.cs" />
+    <Compile Include="CQRS\IEventHandler.cs" />
+    <Compile Include="CQRS\IEventPublisher.cs" />
+    <Compile Include="CQRS\IEventPublisherSubscription.cs" />
+    <Compile Include="CQRS\IQuery.cs" />
+    <Compile Include="CQRS\IQueryHandler.cs" />
+    <Compile Include="CQRS\IQueryResponse.cs" />
+    <Compile Include="CQRS\QueryResponse.cs" />
+    <Compile Include="CQRS\QueryResponseMultiple.cs" />
+    <Compile Include="CQRS\QueryResponsePaged.cs" />
+    <Compile Include="CQRS\QueryResponseSingle.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="IRandom.cs" />
+    <Compile Include="IRunnable.cs" />
+    <Compile Include="Json\IJsonConvertable.cs" />
+    <Compile Include="Json\IJsonConverter.cs" />
+    <Compile Include="Json\IJsonDeserializable.cs" />
+    <Compile Include="Json\IJsonReader.cs" />
+    <Compile Include="Json\IJsonSerializable.cs" />
+    <Compile Include="Json\IJsonSerializer.cs" />
+    <Compile Include="Json\IJsonWriter.cs" />
+    <Compile Include="Json\IValidJson.cs" />
+    <Compile Include="Json\JSON.cs" />
+    <Compile Include="Json\JsonToken.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\ILogFactory.cs" />
+    <Compile Include="Logging\ILogPayload.cs" />
+    <Compile Include="Logging\ILogWriter.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogPayload.cs" />
+    <Compile Include="OperationMask.cs" />
+    <Compile Include="Security\ISecurityContext.cs" />
+    <Compile Include="Security\ISecurityContextRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+</Project>

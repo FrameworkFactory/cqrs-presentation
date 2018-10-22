@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <PropertyGroup>
+    <Description>FWF Test Library</Description>
+    <AssemblyName>FWF.Test</AssemblyName>
+    <RootNamespace>FWF.Test</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{8A55AF65-E464-4EB0-B28D-F71A7AA6ED6E}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Boostrap\TestModule.cs" />
+    <Compile Include="TestApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoFac" Version="4.8.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FWF\FWF.csproj">
+      <Project>{7046A80C-4EA1-463A-8D44-C275A4C10774}</Project>
+      <Name>FWF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+</Project>
