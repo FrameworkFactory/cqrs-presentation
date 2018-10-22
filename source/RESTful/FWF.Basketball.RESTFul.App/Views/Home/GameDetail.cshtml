@@ -51,23 +51,29 @@
                                     <th class="is-sortable" style="width: 40px;">
                                         <div class="th-wrap is-numeric">Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
                                     </th>
+                                    <th class="is-sortable" style="width: 40px;">
+                                        <div class="th-wrap is-numeric">Fantasy Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var player in Model.AwayPlayers)
                                 {
-                                    <tr class="">
-                                        <!----> <!---->
-                                        <td data-label="Name" class="">
-                                            <span>@player.Name</span>
-                                        </td>
-                                        <td data-label="Position" class="">
-                                            <span>@player.Position</span>
-                                        </td>
-                                        <td data-label="Points" class="has-text-right">
-                                            <span>@player.TotalPoints</span>
-                                        </td>
-                                    </tr>
+                                <tr class="">
+                                    <!----> <!---->
+                                    <td data-label="Name" class="">
+                                        <span>@player.Name</span>
+                                    </td>
+                                    <td data-label="Position" class="">
+                                        <span>@player.Position</span>
+                                    </td>
+                                    <td data-label="Points" class="has-text-right">
+                                        <span>@player.TotalPoints</span>
+                                    </td>
+                                    <td data-label="Fantasy Points" class="has-text-right">
+                                        <span>@player.FantasyPoints</span>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                             <!---->
@@ -92,24 +98,30 @@
                                     <th class="is-sortable" style="width: 40px;">
                                         <div class="th-wrap is-numeric">Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
                                     </th>
+                                    <th class="is-sortable" style="width: 40px;">
+                                        <div class="th-wrap is-numeric">Fantasy Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
 
                                 @foreach (var player in Model.HomePlayers)
                                 {
-                                    <tr class="">
-                                        <!----> <!---->
-                                        <td data-label="Name" class="">
-                                            <span>@player.Name</span>
-                                        </td>
-                                        <td data-label="Position" class="">
-                                            <span>@player.Position</span>
-                                        </td>
-                                        <td data-label="Points" class="has-text-right">
-                                            <span>@player.TotalPoints</span>
-                                        </td>
-                                    </tr>
+                                <tr class="">
+                                    <!----> <!---->
+                                    <td data-label="Name" class="">
+                                        <span>@player.Name</span>
+                                    </td>
+                                    <td data-label="Position" class="">
+                                        <span>@player.Position</span>
+                                    </td>
+                                    <td data-label="Points" class="has-text-right">
+                                        <span>@player.TotalPoints</span>
+                                    </td>
+                                    <td data-label="Fantasy Points" class="has-text-right">
+                                        <span>@player.FantasyPoints</span>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>
