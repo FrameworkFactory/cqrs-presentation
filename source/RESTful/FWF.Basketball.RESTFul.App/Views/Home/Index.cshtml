@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="section clearfix">
+
+    <h3 class="title is-3">Current Games</h3>
+
+    <div class="columns">
+
+        @foreach (var item in Model.Games)
+        {
+            <div class="column is-one-third">
+                <div>
+                    <div class="card">
+                        <header class="card-header">
+                            <a href="@Url.Action("GameDetail", new {  id = item.Id } )" class="card-header-title">@item.Name</a>
+                        </header>
+                        <div class="card-content">
+                            <div class="level">
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <p class="heading">Away Team</p>
+                                        <p class="title">@item.AwayScore</p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <p class="heading">Quarter #@item.Quarter</p>
+                                        <p class="title">@item.GameClock</p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <p class="heading">Home Team</p>
+                                        <p class="title">@item.HomeScore</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</section>
