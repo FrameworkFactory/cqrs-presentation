@@ -46,7 +46,7 @@ namespace FWF.Basketball.RESTFul.App.Controllers
 
             var model = new SingleGameModel();
 
-            if (game.IsNull())
+            if (game.IsNotNull())
             {
                 model.Game = game;
 
