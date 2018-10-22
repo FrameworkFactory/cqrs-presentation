@@ -40,6 +40,26 @@ namespace FWF.Basketball.RESTFul.Service.v1.Controllers
                     .Where(x => x.PlayerId == player.Id)
                     .Sum(x => x.Points);
 
+                var playerFantasy = allScores
+                    .Where(x => x.PlayerId == player.Id)
+                    .Sum(x =>
+                    {
+                        // Assume that a fantasy point is incremented by 1 for every score
+                        if (x.Points >= 3)
+                        {
+                            return 5;
+                        }
+                        else if (x.Points >= 2)
+                        {
+                            return  2;
+                        }
+                        else
+                        {
+                            // Free throws are worth nothing
+                            return 0;
+                        }
+                    });
+
                 var playerDetail = new PlayerDetail
                 {
                     Id = player.Id,
@@ -47,7 +67,9 @@ namespace FWF.Basketball.RESTFul.Service.v1.Controllers
                     Position = player.Position,
                     TeamId = player.TeamId,
 
-                    TotalPoints = playerScore
+                    TotalPoints = playerScore,
+
+                    FantasyPoints = playerFantasy,
                 };
 
                 results.Add(playerDetail);

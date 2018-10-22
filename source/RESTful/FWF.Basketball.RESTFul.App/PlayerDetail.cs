@@ -29,5 +29,10 @@ namespace FWF.Basketball.RESTFul.App
             get; set;
         }
 
+        public int FantasyPoints
+        {
+            get; set;
+        }
+
     }
 }
