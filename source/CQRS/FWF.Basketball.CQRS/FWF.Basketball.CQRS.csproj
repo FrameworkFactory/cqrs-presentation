@@ -9,12 +9,15 @@
     <Compile Include="CQRSGamePlayerListener.cs" />
     <Compile Include="EventHandlers\ScoreChangeEventHandler.cs" />
     <Compile Include="EventHandlers\ScoreChangeEventHandler2.cs" />
+    <Compile Include="EventHandlers\ScoreChangeEventHandler3.cs" />
     <Compile Include="Events\GameClockChangeEvent.cs" />
     <Compile Include="Events\GameDetailChangeEvent.cs" />
     <Compile Include="Events\PlayerDetailChangeEvent.cs" />
+    <Compile Include="Events\PlayerFantasyChangeEvent.cs" />
     <Compile Include="Events\ScoreChangeEvent.cs" />
     <Compile Include="GameDetail.cs" />
     <Compile Include="PlayerDetail.cs" />
+    <Compile Include="PlayerFantasy.cs" />
     <Compile Include="Queries\GetPlayerQuery.cs" />
     <Compile Include="Queries\GetPlayersQuery.cs" />
     <Compile Include="Sagas\GetGameDetailSagaQuery.cs" />

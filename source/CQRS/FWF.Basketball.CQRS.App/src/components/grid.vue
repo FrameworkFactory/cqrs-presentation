@@ -25,7 +25,15 @@ export default {
                 width: '40',
                 numeric: true,
                 sortable: true,
+            },
+            {
+                field: 'fantasyPoints',
+                label: 'Fantasy Points',
+                width: '40',
+                numeric: true,
+                sortable: true,
             }
+
         ]
       }
     },

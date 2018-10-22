@@ -25,14 +25,22 @@ const gameStorage = {
           var localGame = state.games.find(function (x) { return x.id === game.id });
 
           if (!localGame) {
+            game.awayScore = 0;
+            game.homeScore = 0;
             state.games.push(game);
           }
           else {
             localGame.name = game.name;
             localGame.quarter = game.quarter;
             localGame.gameClock = game.gameClock;
-            localGame.awayScore = game.awayScore;
-            localGame.homeScore = game.homeScore;
+
+            if (game.awayScore) {
+                localGame.awayScore = game.awayScore;
+            }
+
+            if (game.homeScore) {
+              localGame.homeScore = game.homeScore;
+            }            
           }
         },
 
@@ -49,21 +57,16 @@ const gameStorage = {
         },
 
         addScore(state, score) {
-/*
-          var localGame = state.games.find(function (x) { return x.id === score.gameId });
-
-          if (localGame) {
-
-            // Determine if the score increments the home or away team
-            if (score.teamId == localGame.awayTeamId) {
-              localGame.awayScore = localGame.awayScore + score.points;
-            }
-            if (score.teamId == localGame.homeTeamId) {
-              localGame.homeScore = localGame.homeScore + score.points;
-            }
-          }
-*/
           state.scores.push(score);
+        },
+
+        addOrUpdatePlayerFantasy(state, playerFantasy) {
+
+          var localPlayer = state.players.find(function (x) { return x.id === playerFantasy.id });
+
+          if (localPlayer) {
+            localPlayer.fantasyPoints = playerFantasy.fantasyPoints;
+          }
         }
       },
 
@@ -79,6 +82,20 @@ const gameStorage = {
             awayScore: message.awayScore,
             homeTeamId : message.homeTeamId,
             homeScore: message.homeScore
+          };
+
+          context.commit('addOrUpdateGameDetail', game);
+        },
+
+        gameClockChangeEvent: function(context, message) {
+
+          var game = {
+            id: message.gameId,
+            name: message.gameName,
+            quarter: message.quarter,
+            gameClock: message.gameClock,
+            awayTeamId : message.awayTeamId,
+            homeTeamId : message.homeTeamId,
           };
 
           context.commit('addOrUpdateGameDetail', game);
@@ -105,6 +122,17 @@ const gameStorage = {
             points: message.points
           };
           context.commit('addScore', score);
+        },
+
+        playerFantasyChangeEvent: function(context, message) {
+
+          var playerFantasy = {
+            id: message.id,
+            name: message.name,
+            teamId: message.teamId,
+            fantasyPoints: message.fantasyPoints
+          };
+          context.commit('addOrUpdatePlayerFantasy', playerFantasy);
         },
 
       }
