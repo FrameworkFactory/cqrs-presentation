@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <ItemGroup>
+    <Compile Include="Bootstrap\BasketballTestModule.cs" />
+    <Compile Include="TestApplication.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <Description>FWF Platform Test Library</Description>
+    <AssemblyName>FWF.Basketball.Test</AssemblyName>
+    <RootNamespace>FWF.Basketball.Test</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{5C537C62-74D2-4EB3-B770-71FBD4535F81}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FWF.Test\FWF.Test.csproj">
+      <Project>{8a55af65-e464-4eb0-b28d-f71a7aa6ed6e}</Project>
+      <Name>FWF.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\FWF\FWF.csproj">
+      <Project>{7046a80c-4ea1-463a-8d44-c275a4c10774}</Project>
+      <Name>FWF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWF.Basketball\FWF.Basketball.csproj">
+      <Project>{52cfba4b-fd2e-4a05-91e5-316618d0ba4e}</Project>
+      <Name>FWF.Basketball</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

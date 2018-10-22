@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <ItemGroup>
+    <Compile Include="Bootstrap\BasketballModule.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameClock.cs" />
+    <Compile Include="Logging\ConsoleLogFactory.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Score.cs" />
+    <Compile Include="Team.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <Description>FWF Basketball Library</Description>
+    <AssemblyName>FWF.Basketball</AssemblyName>
+    <RootNamespace>FWF.Basketball</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{5CBC5849-CFD3-44E3-808C-B112A805F4ED}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FWF\FWF.csproj">
+      <Project>{7046a80c-4ea1-463a-8d44-c275a4c10774}</Project>
+      <Name>FWF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="diagram.cd" />
+  </ItemGroup>
+</Project>

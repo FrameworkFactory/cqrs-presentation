@@ -1,0 +1,27 @@
+﻿{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "NPM Build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "npm",
+            "type": "shell",
+            "args": [
+                "run",
+                "build"
+            ],
+            "presentation": {
+                "echo": true,
+                "focus": false,
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}

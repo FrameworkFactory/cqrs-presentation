@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "Game Detail";
+}
+<section class="section clearfix">
+    <nav class="breadcrumb">
+        <ul>
+            <li><a href="/" class="router-link-active">Games</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Game Detail</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h3 class="title is-3">@Model.Game.Name</h3>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Away Team</p>
+                            <p class="title">@Model.Game.AwayScore</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Quarter #@Model.Game.Quarter</p>
+                            <p class="title">@Model.Game.GameClock</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Home Team</p>
+                            <p class="title">@Model.Game.HomeScore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-one-quarter">
+                <div data-v-359c7f54="" class="b-table">
+                    <div class="table-wrapper">
+                        <table class="table is-bordered is-narrow has-mobile-cards">
+                            <thead>
+                                <tr>
+                                    <!----> <!---->
+                                    <th class="">
+                                        <div class="th-wrap">Name <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                    <th class="" style="width: 70px;">
+                                        <div class="th-wrap">Position <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                    <th class="is-sortable" style="width: 40px;">
+                                        <div class="th-wrap is-numeric">Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                    <th class="is-sortable" style="width: 40px;">
+                                        <div class="th-wrap is-numeric">Fantasy Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var player in Model.AwayPlayers)
+                                {
+                                <tr class="">
+                                    <!----> <!---->
+                                    <td data-label="Name" class="">
+                                        <span>@player.Name</span>
+                                    </td>
+                                    <td data-label="Position" class="">
+                                        <span>@player.Position</span>
+                                    </td>
+                                    <td data-label="Points" class="has-text-right">
+                                        <span>@player.TotalPoints</span>
+                                    </td>
+                                    <td data-label="Fantasy Points" class="has-text-right">
+                                        <span>@player.FantasyPoints</span>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                            <!---->
+                        </table>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+            <div class="column is-one-quarter">
+                <div data-v-359c7f54="" class="b-table">
+                    <div class="table-wrapper">
+                        <table class="table is-bordered is-narrow has-mobile-cards">
+                            <thead>
+                                <tr>
+                                    <!----> <!---->
+                                    <th class="">
+                                        <div class="th-wrap">Name <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                    <th class="" style="width: 70px;">
+                                        <div class="th-wrap">Position <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                    <th class="is-sortable" style="width: 40px;">
+                                        <div class="th-wrap is-numeric">Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                    <th class="is-sortable" style="width: 40px;">
+                                        <div class="th-wrap is-numeric">Fantasy Points <span class="icon is-small" style="display: none;"><i class="mdi mdi-arrow-up"></i></span></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var player in Model.HomePlayers)
+                                {
+                                <tr class="">
+                                    <!----> <!---->
+                                    <td data-label="Name" class="">
+                                        <span>@player.Name</span>
+                                    </td>
+                                    <td data-label="Position" class="">
+                                        <span>@player.Position</span>
+                                    </td>
+                                    <td data-label="Points" class="has-text-right">
+                                        <span>@player.TotalPoints</span>
+                                    </td>
+                                    <td data-label="Fantasy Points" class="has-text-right">
+                                        <span>@player.FantasyPoints</span>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

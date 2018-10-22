@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FWF.Basketball.Game">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FWF.Basketball.GameClock">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <Members>
+      <Field Name="NumberOfQuarters" Hidden="true" />
+      <Field Name="TimeEachQuarter" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AYAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>GameClock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FWF.Basketball.Player">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAEAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FWF.Basketball.Score">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAgIAAAAEAAAADAAAAAAAAAAAoAAAAAAA=</HashCode>
+      <FileName>Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FWF.Basketball.Team">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Team.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

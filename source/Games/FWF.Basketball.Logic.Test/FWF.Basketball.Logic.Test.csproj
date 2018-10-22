@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <PropertyGroup>
+    <Description>FWF Basketball Logic Test Library</Description>
+    <AssemblyName>FWF.Basketball.Logic.Test</AssemblyName>
+    <RootNamespace>FWF.Basketball.Logic.Test</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{A768F169-E398-4FAF-9843-F0164A989E42}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FWF.Test\FWF.Test.csproj">
+      <Project>{8a55af65-e464-4eb0-b28d-f71a7aa6ed6e}</Project>
+      <Name>FWF.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\FWF\FWF.csproj">
+      <Project>{7046a80c-4ea1-463a-8d44-c275a4c10774}</Project>
+      <Name>FWF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWF.Basketball.Logic\FWF.Basketball.Logic.csproj">
+      <Project>{E918251C-8E05-4D17-8FB1-EE5317108492}</Project>
+      <Name>FWF.Basketball.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWF.Basketball.Test\FWF.Basketball.Test.csproj">
+      <Project>{5c537c62-74d2-4eb3-b770-71fbd4535f81}</Project>
+      <Name>FWF.Basketball.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWF.Basketball\FWF.Basketball.csproj">
+      <Project>{5CBC5849-CFD3-44E3-808C-B112A805F4ED}</Project>
+      <Name>FWF.Basketball</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

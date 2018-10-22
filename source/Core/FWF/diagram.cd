@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Commands are write operations that are handled and generate a simple status response.">
+    <Position X="0.5" Y="0.5" Height="0.781" Width="2.21" />
+  </Comment>
+  <Comment CommentText="Queries are read operations that query resources to fetch data and respond.">
+    <Position X="0.5" Y="2.488" Height="0.781" Width="1.992" />
+  </Comment>
+  <Comment CommentText="Events are asyncronous messages of any change to the system.">
+    <Position X="0.5" Y="5.323" Height="0.781" Width="1.992" />
+  </Comment>
+  <Class Name="FWF.CQRS.QueryResponsePaged&lt;T&gt;">
+    <Position X="8.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAACAAAAQAAAAAAAAwAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\QueryResponsePaged.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FWF.CQRS.QueryResponseSingle&lt;T&gt;">
+    <Position X="11" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAQAAAAAEAAgAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\QueryResponseSingle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="FWF.CQRS.ICommand">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.ICommandHandler&lt;T&gt;">
+    <Position X="4.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.ICommandResponse">
+    <Position X="7.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\ICommandResponse.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.IQuery">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\IQuery.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.IQueryHandler&lt;T&gt;">
+    <Position X="4.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\IQueryHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.IQueryResponse">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\IQueryResponse.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.IEvent">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAA=</HashCode>
+      <FileName>CQRS\IEvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.IEventPublisher">
+    <Position X="7" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAEAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\IEventPublisher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FWF.CQRS.IEventHandler&lt;T&gt;">
+    <Position X="4.75" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CQRS\IEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
