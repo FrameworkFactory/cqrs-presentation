@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <Import Project="..\..\Common.props" />
+  <PropertyGroup>
+    <Description>FWF Basketball Logic Library</Description>
+    <AssemblyName>FWF.Basketball.Logic</AssemblyName>
+    <RootNamespace>FWF.Basketball.Logic</RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectGuid>{E918251C-8E05-4D17-8FB1-EE5317108492}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap\BasketballLogicModule.cs" />
+    <Compile Include="Consts.cs" />
+    <Compile Include="Data\GameDataRepository.cs" />
+    <Compile Include="Data\IGameDataRepository.cs" />
+    <Compile Include="GamePlayEngine.cs" />
+    <Compile Include="IGamePlayEngine.cs" />
+    <Compile Include="IGamePlayListener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\FWF\FWF.csproj">
+      <Project>{7046a80c-4ea1-463a-8d44-c275a4c10774}</Project>
+      <Name>FWF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FWF.Basketball\FWF.Basketball.csproj">
+      <Project>{5CBC5849-CFD3-44E3-808C-B112A805F4ED}</Project>
+      <Name>FWF.Basketball</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -98,6 +98,26 @@ namespace FWF.Json
                 );
         }
 
+
+        public static IJsonWriter GetBsonWriter(Stream stream)
+        {
+            var writer = new BinaryWriter(stream, Encoding.UTF8, true);
+            var dataWriter = new Newtonsoft.Json.Bson.BsonDataWriter(writer);
+
+            return ComponentContext.Resolve<IJsonWriter>(
+                new TypedParameter(typeof(Newtonsoft.Json.JsonWriter), dataWriter)
+                );
+        }
+        public static IJsonReader GetBsonReader(Stream stream)
+        {
+            var reader = new BinaryReader(stream, Encoding.UTF8, true);
+            var dataReader = new Newtonsoft.Json.Bson.BsonDataReader(reader, false, DateTimeKind.Utc);
+
+            return ComponentContext.Resolve<IJsonReader>(
+                new TypedParameter(typeof(Newtonsoft.Json.JsonReader), dataReader)
+                );
+        }
+
     }
 }
 

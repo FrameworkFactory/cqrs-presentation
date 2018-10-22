@@ -13,10 +13,8 @@ namespace FWF.Json
         void WriteEndArray();
 
         void WritePropertyName(string propertyName);
+
         void Write<T>(T value);
-
-        void WriteProperty<T>(string propertyName, T value);
-
         void WriteNull();
         void WriteToken(JsonToken jsonToken, object value);
 

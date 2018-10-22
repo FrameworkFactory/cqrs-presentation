@@ -8,14 +8,28 @@
     <ProjectGuid>{7046A80C-4EA1-463A-8D44-C275A4C10774}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Net\**" />
+    <None Remove="Data\**" />
+    <None Remove="Net\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppVersion.cs" />
     <Compile Include="Bootstrap\RootModule.cs" />
     <Compile Include="ComponentModel\IValidate.cs" />
     <Compile Include="ComponentModel\ValidationError.cs" />
     <Compile Include="ComponentModel\ValidationException.cs" />
     <Compile Include="ComponentModel\ValidationMessages.cs" />
     <Compile Include="ComponentModel\ValidationResponse.cs" />
+    <Compile Include="Configuration\CommonAppSettingsKeys.cs" />
+    <Compile Include="Configuration\IAppSettings.cs" />
+    <Compile Include="Configuration\InMemoryAppSettings.cs" />
+    <Compile Include="Configuration\ReadOnlySetting.cs" />
     <Compile Include="CQRS\CommandResponse.cs" />
+    <Compile Include="CQRS\CqrsLogicHandler.cs" />
+    <Compile Include="CQRS\EntityEventBase.cs" />
     <Compile Include="CQRS\EventBase.cs" />
+    <Compile Include="CQRS\EventPublisher.cs" />
     <Compile Include="CQRS\ICommand.cs" />
     <Compile Include="CQRS\ICommandHandler.cs" />
     <Compile Include="CQRS\ICommandResponse.cs" />
@@ -31,10 +45,36 @@
     <Compile Include="CQRS\QueryResponseMultiple.cs" />
     <Compile Include="CQRS\QueryResponsePaged.cs" />
     <Compile Include="CQRS\QueryResponseSingle.cs" />
+    <Compile Include="Data\Local\ILocalDataContext.cs" />
+    <Compile Include="Data\Local\ILocalWriteDataContext.cs" />
+    <Compile Include="Data\Local\LocalDataContext.cs" />
+    <Compile Include="Data\Local\LocalWriteDataContext.cs" />
+    <Compile Include="DateTimeClock.cs" />
+    <Compile Include="DateTimeNow.cs" />
+    <Compile Include="DefaultConverters.cs" />
+    <Compile Include="DisposableObject.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EnumManager.cs" />
+    <Compile Include="Extensions\AutofacExtensions.cs" />
+    <Compile Include="Extensions\ByteExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
+    <Compile Include="Extensions\LogExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TimeSpanExtensions.cs" />
+    <Compile Include="Extensions\ValidationExtensions.cs" />
+    <Compile Include="IAcceleratedClock.cs" />
+    <Compile Include="IClock.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="INow.cs" />
     <Compile Include="IRandom.cs" />
     <Compile Include="IRunnable.cs" />
+    <Compile Include="Json\Converters\AppVersionJsonConverter.cs" />
+    <Compile Include="Json\Converters\DateTimeJsonConverter.cs" />
+    <Compile Include="Json\Converters\GuidJsonConverter.cs" />
+    <Compile Include="Json\Converters\LogLevelJsonConverter.cs" />
+    <Compile Include="Json\Converters\TimeSpanJsonConverter.cs" />
     <Compile Include="Json\IJsonConvertable.cs" />
     <Compile Include="Json\IJsonConverter.cs" />
     <Compile Include="Json\IJsonDeserializable.cs" />
@@ -44,20 +84,45 @@
     <Compile Include="Json\IJsonWriter.cs" />
     <Compile Include="Json\IValidJson.cs" />
     <Compile Include="Json\JSON.cs" />
+    <Compile Include="Json\JsonGeneric.cs" />
+    <Compile Include="Json\JsonReader.cs" />
+    <Compile Include="Json\JsonSerializer.cs" />
     <Compile Include="Json\JsonToken.cs" />
+    <Compile Include="Json\JsonWriter.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\ILogFactory.cs" />
     <Compile Include="Logging\ILogPayload.cs" />
     <Compile Include="Logging\ILogWriter.cs" />
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Logging\LogPayload.cs" />
+    <Compile Include="Logging\NoOpLog.cs" />
+    <Compile Include="Logging\NoOpLogFactory.cs" />
     <Compile Include="OperationMask.cs" />
+    <Compile Include="PublicType.cs" />
+    <Compile Include="RngRandom.cs" />
     <Compile Include="Security\ISecurityContext.cs" />
+    <Compile Include="Security\ISecurityContextFactory.cs" />
     <Compile Include="Security\ISecurityContextRole.cs" />
+    <Compile Include="Security\ISecuritySession.cs" />
+    <Compile Include="Security\ISecuritySessionFactory.cs" />
+    <Compile Include="Security\NoOpSecurityContext.cs" />
+    <Compile Include="Security\NoOpSecuritySession.cs" />
+    <Compile Include="Security\SecurityContextFactory.cs" />
+    <Compile Include="Security\SecuritySessionFactory.cs" />
+    <Compile Include="Startable.cs" />
+    <Compile Include="StringBuilderPool.cs" />
+    <Compile Include="Threading\IThreadLoopEvent.cs" />
+    <Compile Include="Threading\StartableThread.cs" />
+    <Compile Include="Threading\StartableThreadLoop.cs" />
+    <Compile Include="Threading\ThreadLoopEventWrapper.cs" />
+    <Compile Include="Threading\TimeoutLock.cs" />
+    <Compile Include="TypeConverter.cs" />
+    <Compile Include="Url.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
 </Project>
