@@ -2,6 +2,7 @@
   <Import Project="..\..\Common.props" />
   <ItemGroup>
     <Compile Include="Bootstrap\BasketballCQRSModule.cs" />
+    <Compile Include="CommandHandlers\AddPlayerCommandHandler.cs" />
     <Compile Include="Commands\AddPlayerCommand.cs" />
     <Compile Include="Commands\AddPlayersCommand.cs" />
     <Compile Include="Commands\DeletePlayerCommand.cs" />
@@ -16,12 +17,12 @@
     <Compile Include="Events\PlayerFantasyChangeEvent.cs" />
     <Compile Include="Events\ScoreChangeEvent.cs" />
     <Compile Include="GameDetail.cs" />
-    <Compile Include="IReadCacheDataRepository.cs" />
+    <Compile Include="Data\IReadCacheDataRepository.cs" />
     <Compile Include="PlayerDetail.cs" />
     <Compile Include="PlayerFantasy.cs" />
-    <Compile Include="Queries\GetPlayerQuery.cs" />
-    <Compile Include="Queries\GetPlayersQuery.cs" />
-    <Compile Include="ReadCacheDataRepository.cs" />
+    <Compile Include="Queries\GetPlayerDetailsQuery.cs" />
+    <Compile Include="Data\ReadCacheDataRepository.cs" />
+    <Compile Include="QueryHandlers\GetPlayerDetailsQueryHandler.cs" />
     <Compile Include="Sagas\GetGameDetailSagaQuery.cs" />
   </ItemGroup>
   <PropertyGroup>
@@ -50,8 +51,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CommandHandlers\" />
-    <Folder Include="QueryHandlers\" />
     <Folder Include="SagaHandlers\" />
   </ItemGroup>
 </Project>
