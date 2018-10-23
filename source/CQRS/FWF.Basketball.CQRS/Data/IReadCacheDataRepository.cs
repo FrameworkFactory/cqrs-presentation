@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FWF.Basketball.CQRS
+namespace FWF.Basketball.CQRS.Data
 {
     public interface IReadCacheDataRepository : ILocalDataContext
     {

@@ -1,5 +1,5 @@
-﻿using FWF.Basketball.CQRS.Events;
-using FWF.Basketball.Logic.Data;
+﻿using FWF.Basketball.CQRS.Data;
+using FWF.Basketball.CQRS.Events;
 using FWF.CQRS;
 using FWF.Logging;
 using FWF.Security;
