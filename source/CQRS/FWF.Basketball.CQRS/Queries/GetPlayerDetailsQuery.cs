@@ -6,24 +6,23 @@ using System.Collections.Generic;
 
 namespace FWF.Basketball.CQRS.Queries
 {
-    public class GetPlayerQuery : IQuery
+    public class GetPlayerDetailsQuery : IQuery
     {
-
         public IEnumerable<ValidationError> Validate()
         {
-            if ((Id.IsNull() || Id == Guid.Empty))
+            if (TeamId.IsNull() || TeamId == Guid.Empty)
             {
-                yield return new ValidationError { PropertyName = "Id", ErrorMessage = ValidationMessages.CannotBeNullOrEmpty };
+                yield return new ValidationError { PropertyName = "TeamId", ErrorMessage = ValidationMessages.CannotBeNullOrEmpty };
             }
         }
 
-        public Guid? Id { get; set; }
-
+        public Guid? TeamId { get; set; }
+        
         public void ToJson(IJsonWriter writer)
         {
             writer.WriteStartObject();
-            writer.WritePropertyName("id");
-            writer.Write(this.Id);
+            writer.WritePropertyName("teamId");
+            writer.Write(this.TeamId);                
             writer.WriteEndObject();
         }
 
@@ -45,8 +44,8 @@ namespace FWF.Basketball.CQRS.Queries
 
                 switch (propertyName)
                 {
-                    case "id":
-                        this.Id = reader.Read<Guid?>(null);
+                    case "teamId":
+                        this.TeamId = reader.Read<Guid?>(null);
                         break;
 
                     default:
@@ -68,12 +67,10 @@ namespace FWF.Basketball.CQRS.Queries
             }
         }
 
-
-
     }
 
 
-    public class GetPlayerQueryResponse : QueryResponseSingle<Player>
+    public class GetPlayerDetailsQueryResponse : QueryResponsePaged<PlayerDetail>
     {
     }
 }

@@ -1,5 +1,5 @@
+using FWF.Basketball.CQRS.Data;
 using FWF.Basketball.CQRS.Events;
-using FWF.Basketball.Logic.Data;
 using FWF.CQRS;
 using FWF.Logging;
 using FWF.Security;
@@ -9,17 +9,17 @@ namespace FWF.Basketball.CQRS.EventHandlers
     internal class ScoreChangeEventHandler3 : IEventHandler<ScoreChangeEvent>
     {
 
-        private readonly IGameDataRepository _gameDataRepository;
+        private readonly IReadCacheDataRepository _readCacheDataRepository;
         private readonly IEventPublisher _eventPublisher;
         private readonly ILog _log;
 
         public ScoreChangeEventHandler3(
-            IGameDataRepository gameDataRepository,
+            IReadCacheDataRepository readCacheDataRepository,
             IEventPublisher eventPublisher,
             ILogFactory logFactory
             )
         {
-            _gameDataRepository = gameDataRepository;
+            _readCacheDataRepository = readCacheDataRepository;
             _eventPublisher = eventPublisher;
 
             _log = logFactory.CreateForType(this);
@@ -30,7 +30,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
             // Whenever a score changes, this effects other calculations
             // Using the event-driven framework - ensure that each calculation(aggregate) is updated as well
 
-            var playerFantasy = _gameDataRepository.FirstOrDefault<PlayerFantasy>(x => x.Id == eventInstance.PlayerId);
+            var playerFantasy = _readCacheDataRepository.FirstOrDefault<PlayerFantasy>(x => x.Id == eventInstance.PlayerId);
 
             if (playerFantasy.IsNull())
             {
@@ -41,7 +41,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
                     TeamId = eventInstance.TeamId.GetValueOrDefault(),
                     FantasyPoints = 0
                 };
-                using (var writeContext = _gameDataRepository.BeginWrite())
+                using (var writeContext = _readCacheDataRepository.BeginWrite())
                 {
                     writeContext.Insert(playerFantasy);
                 }
@@ -63,7 +63,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
 
             // Save in local repository 
 
-            using (var writeContext = _gameDataRepository.BeginWrite())
+            using (var writeContext = _readCacheDataRepository.BeginWrite())
             {
                 writeContext.Update(playerFantasy);
             }

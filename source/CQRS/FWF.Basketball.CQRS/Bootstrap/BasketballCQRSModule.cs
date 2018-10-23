@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using FWF.Basketball.CQRS.Data;
 using FWF.Basketball.Logic;
 using FWF.CQRS;
 
@@ -14,6 +15,11 @@ namespace FWF.Basketball.CQRS.Bootstrap
             builder.RegisterType<CQRSGamePlayerListener>()
                 .AsSelf()
                 .As<IGamePlayListener>()
+                .SingleInstance();
+
+            builder.RegisterType<ReadCacheDataRepository>()
+                .AsSelf()
+                .As<IReadCacheDataRepository>()
                 .SingleInstance();
 
             // Register all handlers
