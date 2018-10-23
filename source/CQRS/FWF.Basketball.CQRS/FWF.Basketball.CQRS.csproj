@@ -16,10 +16,12 @@
     <Compile Include="Events\PlayerFantasyChangeEvent.cs" />
     <Compile Include="Events\ScoreChangeEvent.cs" />
     <Compile Include="GameDetail.cs" />
+    <Compile Include="IReadCacheDataRepository.cs" />
     <Compile Include="PlayerDetail.cs" />
     <Compile Include="PlayerFantasy.cs" />
     <Compile Include="Queries\GetPlayerQuery.cs" />
     <Compile Include="Queries\GetPlayersQuery.cs" />
+    <Compile Include="ReadCacheDataRepository.cs" />
     <Compile Include="Sagas\GetGameDetailSagaQuery.cs" />
   </ItemGroup>
   <PropertyGroup>

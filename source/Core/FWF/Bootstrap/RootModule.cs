@@ -48,7 +48,7 @@ namespace FWF.Bootstrap
             builder.RegisterType<LocalDataContext>()
                 .AsSelf()
                 .As<ILocalDataContext>()
-                .SingleInstance();
+                .InstancePerDependency();
 
             builder.RegisterType<LocalTcpPortManager>()
                 .AsSelf()

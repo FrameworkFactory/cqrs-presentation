@@ -1,5 +1,4 @@
 ﻿using FWF.Basketball.CQRS.Events;
-using FWF.Basketball.Logic.Data;
 using FWF.CQRS;
 using FWF.Logging;
 using FWF.Security;
@@ -9,17 +8,17 @@ namespace FWF.Basketball.CQRS.EventHandlers
     internal class ScoreChangeEventHandler : IEventHandler<ScoreChangeEvent>
     {
 
-        private readonly IGameDataRepository _gameDataRepository;
+        private readonly IReadCacheDataRepository _readCacheDataRepository;
         private readonly IEventPublisher _eventPublisher;
         private readonly ILog _log;
 
         public ScoreChangeEventHandler(
-            IGameDataRepository gameDataRepository,
+            IReadCacheDataRepository readCacheDataRepository,
             IEventPublisher eventPublisher,
             ILogFactory logFactory
             )
         {
-            _gameDataRepository = gameDataRepository;
+            _readCacheDataRepository = readCacheDataRepository;
             _eventPublisher = eventPublisher;
 
             _log = logFactory.CreateForType(this);
@@ -30,7 +29,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
             // Whenever a score changes, this effects other calculations
             // Using the event-driven framework - ensure that each calculation(aggregate) is updated as well
 
-            var playerDetail = _gameDataRepository.FirstOrDefault<PlayerDetail>(x => x.Id == eventInstance.PlayerId);
+            var playerDetail = _readCacheDataRepository.FirstOrDefault<PlayerDetail>(x => x.Id == eventInstance.PlayerId);
 
             if (playerDetail.IsNull())
             {
@@ -42,7 +41,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
                     Position = eventInstance.PlayerPosition,
                     TotalPoints = 0,
                 };
-                using (var writeContext = _gameDataRepository.BeginWrite())
+                using (var writeContext = _readCacheDataRepository.BeginWrite())
                 {
                     writeContext.Insert(playerDetail);
                 }
@@ -54,7 +53,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
 
             // Save in local repository 
 
-            using (var writeContext = _gameDataRepository.BeginWrite())
+            using (var writeContext = _readCacheDataRepository.BeginWrite())
             {
                 writeContext.Update(playerDetail);
             }

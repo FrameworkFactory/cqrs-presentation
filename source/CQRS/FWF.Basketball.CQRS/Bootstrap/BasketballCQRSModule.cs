@@ -16,6 +16,11 @@ namespace FWF.Basketball.CQRS.Bootstrap
                 .As<IGamePlayListener>()
                 .SingleInstance();
 
+            builder.RegisterType<ReadCacheDataRepository>()
+                .AsSelf()
+                .As<IReadCacheDataRepository>()
+                .SingleInstance();
+
             // Register all handlers
 
             builder.RegisterAssemblyTypes(_assembly)
