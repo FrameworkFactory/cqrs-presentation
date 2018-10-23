@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using FWF.Basketball.CQRS.Data;
 using FWF.Basketball.Logic;
 using FWF.CQRS;
 

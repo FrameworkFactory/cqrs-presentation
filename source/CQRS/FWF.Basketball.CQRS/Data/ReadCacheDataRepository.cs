@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FWF.Basketball.CQRS
+namespace FWF.Basketball.CQRS.Data
 {
     internal class ReadCacheDataRepository : Startable, ILocalDataContext, IReadCacheDataRepository
     {
