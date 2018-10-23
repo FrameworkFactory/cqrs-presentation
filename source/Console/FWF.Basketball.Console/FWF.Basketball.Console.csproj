@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\FWF\FWF.csproj" />
+    <ProjectReference Include="..\..\CQRS\FWF.Basketball.CQRS\FWF.Basketball.CQRS.csproj" />
     <ProjectReference Include="..\..\Games\FWF.Basketball.Logic\FWF.Basketball.Logic.csproj" />
     <ProjectReference Include="..\..\Games\FWF.Basketball\FWF.Basketball.csproj" />
   </ItemGroup>
