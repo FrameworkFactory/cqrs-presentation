@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using FWF.Basketball.Bootstrap;
 using FWF.Basketball.Console.Bootstrap;
+using FWF.Basketball.CQRS.Bootstrap;
 using FWF.Basketball.Logic.Bootstrap;
 using FWF.Bootstrap;
 using FWF.Configuration;
@@ -31,6 +32,7 @@ namespace FWF.Basketball.Console
 
                 containerBuilder.RegisterModule<BasketballModule>();
                 containerBuilder.RegisterModule<BasketballLogicModule>();
+                containerBuilder.RegisterModule<BasketballCQRSModule>();
 
                 containerBuilder.RegisterModule<ConsoleModule>();
 

@@ -9,17 +9,17 @@ namespace FWF.Basketball.CQRS.EventHandlers
     internal class ScoreChangeEventHandler2 : IEventHandler<ScoreChangeEvent>
     {
 
-        private readonly IGameDataRepository _gameDataRepository;
+        private readonly IReadCacheDataRepository _readCacheDataRepository;
         private readonly IEventPublisher _eventPublisher;
         private readonly ILog _log;
 
         public ScoreChangeEventHandler2(
-            IGameDataRepository gameDataRepository,
+            IReadCacheDataRepository readCacheDataRepository,
             IEventPublisher eventPublisher,
             ILogFactory logFactory
             )
         {
-            _gameDataRepository = gameDataRepository;
+            _readCacheDataRepository = readCacheDataRepository;
             _eventPublisher = eventPublisher;
 
             _log = logFactory.CreateForType(this);
@@ -30,7 +30,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
             // Whenever a score changes, this effects other calculations
             // Using the event-driven framework - ensure that each calculation(aggregate) is updated as well
 
-            var gameDetail = _gameDataRepository.FirstOrDefault<GameDetail>(x => x.Id == eventInstance.GameId);
+            var gameDetail = _readCacheDataRepository.FirstOrDefault<GameDetail>(x => x.Id == eventInstance.GameId);
 
             if (gameDetail.IsNull())
             {
@@ -45,7 +45,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
                     HomeTeamId = eventInstance.HomeTeamId.GetValueOrDefault(),
                     HomeScore = 0,
                 };
-                using (var writeContext = _gameDataRepository.BeginWrite())
+                using (var writeContext = _readCacheDataRepository.BeginWrite())
                 {
                     writeContext.Insert(gameDetail);
                 }
@@ -69,7 +69,7 @@ namespace FWF.Basketball.CQRS.EventHandlers
 
             // Save in local repository 
 
-            using (var writeContext = _gameDataRepository.BeginWrite())
+            using (var writeContext = _readCacheDataRepository.BeginWrite())
             {
                 writeContext.Update(gameDetail);
             }
