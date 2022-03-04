@@ -9,7 +9,7 @@ namespace FWF
 {
     internal class RngRandom : IRandom
     {
-        private static volatile RNGCryptoServiceProvider _rng;
+        private static volatile RandomNumberGenerator _rng;
         private readonly byte[] _buffer = new byte[_bufferSize];
         private int _bufferOffset = 0;
         private const int _bufferSize = 1024;
@@ -23,7 +23,7 @@ namespace FWF
 
         static RngRandom()
         {
-            _rng = new RNGCryptoServiceProvider();
+            _rng = RandomNumberGenerator.Create();
         }
 
         public RngRandom(

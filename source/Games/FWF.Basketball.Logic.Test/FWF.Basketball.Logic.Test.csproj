@@ -6,6 +6,7 @@
     <RootNamespace>FWF.Basketball.Logic.Test</RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectGuid>{A768F169-E398-4FAF-9843-F0164A989E42}</ProjectGuid>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\FWF.Test\FWF.Test.csproj">

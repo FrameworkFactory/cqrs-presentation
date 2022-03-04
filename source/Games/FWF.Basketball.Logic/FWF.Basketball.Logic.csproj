@@ -6,6 +6,7 @@
     <RootNamespace>FWF.Basketball.Logic</RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectGuid>{E918251C-8E05-4D17-8FB1-EE5317108492}</ProjectGuid>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\BasketballLogicModule.cs" />

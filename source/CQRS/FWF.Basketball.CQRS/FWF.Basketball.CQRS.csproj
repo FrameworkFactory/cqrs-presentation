@@ -31,10 +31,11 @@
     <RootNamespace>FWF.Basketball.CQRS</RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectGuid>{D7D57DF0-85D8-491C-84EC-260ECB6230EB}</ProjectGuid>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.8.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\FWF\FWF.csproj">

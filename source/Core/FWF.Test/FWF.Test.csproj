@@ -6,6 +6,7 @@
     <RootNamespace>FWF.Test</RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectGuid>{8A55AF65-E464-4EB0-B28D-F71A7AA6ED6E}</ProjectGuid>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Configuration\**" />
@@ -30,10 +31,10 @@
     <Compile Include="TestApplication.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AutoFac" Version="4.8.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
-    <PackageReference Include="nunit" Version="3.10.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="AutoFac" Version="6.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="nunit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FWF\FWF.csproj">

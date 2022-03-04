@@ -15,10 +15,11 @@
     <RootNamespace>FWF.Basketball</RootNamespace>
     <OutputType>Library</OutputType>
     <ProjectGuid>{5CBC5849-CFD3-44E3-808C-B112A805F4ED}</ProjectGuid>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="4.8.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\FWF\FWF.csproj">

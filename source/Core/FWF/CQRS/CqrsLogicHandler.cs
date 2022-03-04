@@ -490,7 +490,7 @@ namespace FWF.CQRS
             {
                 _log.Error(ex, ex.Message);
 
-                throw ex;
+                throw;
             }
         }
 

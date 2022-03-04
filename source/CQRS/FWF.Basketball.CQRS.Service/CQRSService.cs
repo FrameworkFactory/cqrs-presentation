@@ -91,9 +91,9 @@ namespace FWF.Basketball.CQRS.Service
 
         protected override void Configure(IApplicationBuilder app)
         {
-            app.UseResponseBuffering();
+            //app.UseResponseBuffering();
             //app.UseHsts();
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
             //app.UseResponseCompression();
 
             // 

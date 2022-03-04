@@ -103,20 +103,6 @@ namespace FWF.Threading
                     {
                         _log.Error(ex, ex.Message);
                     }
-                    finally
-                    {
-                        if (_thread.IsAlive)
-                        {
-                            try
-                            {
-                                _thread.Abort();
-                            }
-                            catch (Exception ex)
-                            {
-                                _log.Error(ex, ex.Message);
-                            }
-                        }
-                    }
                 }
             }
         }
